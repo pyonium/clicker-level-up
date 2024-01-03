@@ -31,7 +31,7 @@ public class SoundEngine {
             clip.open(audioInputStream); // liable to error with pulseaudio, works on windows, one user informs me mac works
             return true;
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
-            log.warn("Failed to load C Engineer sound " + sound, e);
+            log.warn("Failed to load sound " + sound, e);
         }
         return false;
     }
@@ -55,7 +55,7 @@ public class SoundEngine {
                 clip = AudioSystem.getClip();
             } catch (LineUnavailableException e) {
                 lastClipMTime = CLIP_MTIME_UNLOADED;
-                log.warn("Failed to get clip for C Engineer sound " + sound, e);
+                log.warn("Failed to get clip for sound " + sound, e);
                 return;
             }
 
